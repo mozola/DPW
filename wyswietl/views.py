@@ -1,14 +1,14 @@
+from django.shortcuts import redirect
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from .forms import OdbiorcaForm
 from .forms import ParametryForm
 from .models import Odbiorca
-from django.shortcuts import redirect
 
 
 def widok(request):
-    return HttpResponse('To jest test <b>tekst</b>')
+    return render('To jest test <b>tekst</b>')
 
 def testowywidok(request):
     return render_to_response('test.html')
@@ -17,8 +17,8 @@ def mainwebsite(request):
    if request.method == "POST":
        form=OdbiorcaForm(request.POST)
        if form.is_valid():
-            post.save()
-            return redirect('editProject', pk=form.pk)
+            form.save()
+            return redirect(testowywidok)
    else:
        form=OdbiorcaForm()
    return render(request,'mainwebsite.html',{'form':form})

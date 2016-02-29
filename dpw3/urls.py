@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-
+#from .views import widok
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'dpw3.views.home', name='home'),
