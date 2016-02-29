@@ -2,20 +2,13 @@
 	<head>
 		<title>Strona glowna</title>
 	</head>
-	<body backgroundcolor="gray">
+	<body>
 		<center>
 			<h2>Podstawowe informacje: </h2>
                 	<form method="POST" class="post-form">{% csrf_token %}
                      		{{ form.as_p }}
                      		<button type="submit" class="save btn btn-default">Dodaj</button>
                 	</form>
-			<br>
-			{%for news in odbiorc%}
-				{{news.imie}}
-				{{news.nazwisko}}
-			{%endfor%}
 		</center>
-		
-
 	</body>
 </html>

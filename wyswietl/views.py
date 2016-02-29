@@ -3,7 +3,9 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from .forms import OdbiorcaForm
 from .forms import ParametryForm
-from .odels import Odbiorca
+from .models import Odbiorca
+from django.shortcuts import redirect
+
 
 def widok(request):
     return HttpResponse('To jest test <b>tekst</b>')
@@ -12,9 +14,14 @@ def testowywidok(request):
     return render_to_response('test.html')
 
 def mainwebsite(request):    
-    form=OdbiorcaForm()
-    odbiorc=Odbiorca.objects.all()
-    return render_to_response('mainwebsite.html',{'news':odbiorc},{'form':form})
+   if request.method == "POST":
+       form=OdbiorcaForm(request.POST)
+       if form.is_valid():
+            post.save()
+            return redirect('editProject', pk=form.pk)
+   else:
+       form=OdbiorcaForm()
+   return render(request,'mainwebsite.html',{'form':form})
 
 def editProject(request):
     form2=ParametryForm()
