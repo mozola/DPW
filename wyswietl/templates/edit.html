@@ -4,9 +4,13 @@
 	</head>
 	<body> 
                 <center>
-                       <table>
-                              <tr><td><b>test dzialania</b></td>nowey wpis<td>a kuku</td>jest</tr>
-                       </table>
+                       <h1>Parametry pompy odsrodkowej:</h1>
+                       <form method="POST" class="post-form">{% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="submit" class="save btn btn-default">Dodaj</button>
+                       </form>
+                </center>
+
 
 
 

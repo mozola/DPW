@@ -18,11 +18,20 @@ def mainwebsite(request):
        form=OdbiorcaForm(request.POST)
        if form.is_valid():
             form.save()
-            return redirect(testowywidok)
+            return redirect(editProject)
    else:
        form=OdbiorcaForm()
    return render(request,'mainwebsite.html',{'form':form})
 
+
 def editProject(request):
-    form2=ParametryForm()
-    return render(request,'edit.html',{'form':form2})
+    if request.method == "POST":
+       form=ParametryForm(request.POST)
+       if form.is_valid():
+            form.save()
+            return redirect(testowywidok) 
+    else:
+        form=ParametryForm()
+    return render(request,'edit.html',{'form':form})
+
+

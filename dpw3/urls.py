@@ -10,5 +10,5 @@ urlpatterns = patterns('',
     url(r'^test/$','wyswietl.views.widok'),
     url(r'^test2/$','wyswietl.views.testowywidok'),
     url(r'^$','wyswietl.views.mainwebsite'),
-    url(r'^edit/$','wyswietl.views.editProject',name='result'),
+    url(r'^edit/$','wyswietl.views.editProject'),
 )

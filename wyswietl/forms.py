@@ -8,6 +8,8 @@ class OdbiorcaForm(forms.ModelForm):
         model=Odbiorca
         field=('imie','nazwisko',)
 
-class ParametryForm(forms.Form):
+class ParametryForm(forms.ModelForm):
+       
+     class Meta:
        model=Parametry
        field=('wysokosc','obroty','strumien',)
