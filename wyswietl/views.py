@@ -11,7 +11,9 @@ def widok(request):
     return render('To jest test <b>tekst</b>')
 
 def testowywidok(request):
-    return render_to_response('test.html')
+    post=Odbiorca.objects.all().last()
+    post2=Odbiorca.objects.all()
+    return render(request,'test.html',{'post':post})
 
 def mainwebsite(request):    
    if request.method == "POST":
@@ -33,5 +35,3 @@ def editProject(request):
     else:
         form=ParametryForm()
     return render(request,'edit.html',{'form':form})
-
-

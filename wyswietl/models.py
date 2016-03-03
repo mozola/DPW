@@ -8,10 +8,10 @@ class Odbiorca(models.Model):
          return self.nazwisko
 
 class Parametry(models.Model):    
-     wysokosc=models.CharField(max_length=100)
-     obroty=models.CharField(max_length=100)
-     strumien=models.CharField(max_length=100)
+     wysokosc=models.IntegerField(max_length=100)
+     obroty=models.IntegerField(max_length=100)
+     strumien=models.IntegerField(max_length=100)
 
      def __str__(self):
          return self.wysokosc
-    
+ 
