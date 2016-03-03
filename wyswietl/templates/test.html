@@ -1,10 +1,5 @@
-<html>
-	<head>
-		<title>Test dzialania widoku</title>
-		<style type="text/css">
-		</style>
-	</head>
-        <body>
+{% extends "base.html" %}
+{% block content %}
               
 		<b>{{ post.imie }} {{ post.nazwisko }}</b>
 		<b>Basic parametrs:</b>
@@ -33,5 +28,4 @@
 			<tr><td></td><td></td></tr>
               </table>
               </center>
-	</body>
-</html>
+{% endblock %}
