@@ -35,3 +35,7 @@ def editProject(request):
     else:
         form=ParametryForm()
     return render(request,'edit.html',{'form':form})
+
+
+def major(request):
+    return render_to_response('maina.html')

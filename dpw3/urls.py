@@ -8,7 +8,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^test/$','wyswietl.views.widok'),
-    url(r'^test2/$','wyswietl.views.testowywidok'),
-    url(r'^$','wyswietl.views.mainwebsite'),
+    url(r'^formulaz/result/$','wyswietl.views.testowywidok'),
+    url(r'^formulaz/$','wyswietl.views.mainwebsite'),
     url(r'^edit/$','wyswietl.views.editProject'),
+    url(r'^$','wyswietl.views.major'),
 )
