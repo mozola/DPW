@@ -5,15 +5,15 @@ from django.shortcuts import render_to_response
 from .forms import OdbiorcaForm
 from .forms import ParametryForm
 from .models import Odbiorca
-
+from .models import Parametry
 
 def widok(request):
     return render('To jest test <b>tekst</b>')
 
 def testowywidok(request):
     post=Odbiorca.objects.all().last()
-    post2=Odbiorca.objects.all()
-    return render(request,'test.html',{'post':post})
+    parametry=Parametry.objects.all().last()
+    return render(request,'test.html',{'parametry':parametry})
 
 def mainwebsite(request):    
    if request.method == "POST":

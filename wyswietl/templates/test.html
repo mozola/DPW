@@ -1,31 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
               
-		<b>{{ post.imie }} {{ post.nazwisko }}</b>
-		<b>Basic parametrs:</b>
+		<h1>{{ post.imie }} {{ post.nazwisko }}</h1>
+		<br><p style=" text-align: center; font-size: 20px">Basic parametrs:</b>
 		<center>
-		<table border=1>
+		<table border=1 style="font-size: 13px">
 			<tr>
 				<td>Nazwa:</td><td>Wartosc:</td>
 			</tr>
 			<tr>
-				<td>Wydajnosc pompy:</td><td>Nowy</td>
+				<td>Wydajnosc pompy:</td><td>{{parametry.strumien}}</td>
 			</tr>
 			<tr>
-				<td>Wysokosc podnoszenia:</td><td>komurka</td>
+				<td>Wysokosc podnoszenia:</td><td>{{parametry.wysokosc}}</td>
 			</tr>
 			<tr>
-				<td>Predkosc obrotowa:</td></td>
+				<td>Predkosc obrotowa:</td><td>{{parametry.obroty}}</td>
 			</tr>
 		</table></center>
-		<b>Obliczenia wstepne:</b>
-		<center><table border=1>
-			<tr><td>Nazwa:</td><td>Wartosc:</td></tr>
-			<tr><td>Kinematyczny wyroznik szybkobierznosci:</td><td></td></tr>
-			<tr><td>Dynamiczny wyroznik szybkobierznosci:</td><td></td></tr>
-			<tr><td></td><td></td></tr>
-			<tr><td></td><td></td></tr>
-			<tr><td></td><td></td></tr>
-              </table>
+		<center><p style="font-size: 20px">Obliczenia charakterystyki ukladu:</b>
+			<table border=1>
+				<tr><td>Nazwa:</td><td>Wartosc:</td></tr>
+				<tr><td>Wyznaczamy wyroznik oporu ukladu:</td><td></td></tr>
+				<tr><td>Wyznaczenie charakterystyki ukladu:</td><td></td></tr>
+		 	</table>
               </center>
 {% endblock %}
