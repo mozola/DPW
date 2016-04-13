@@ -92,7 +92,7 @@
 			#menu {
 				padding-left: 10px;
 				width: 150px;
-				margin-right: 180px;>
+				margin-right: 180px;
 				float: right;
 				margin-top: 0px;}
 
@@ -133,52 +133,81 @@
 				padding: 1px;
 				margin-top: 5px;
 				margin-bottom: 5px;}
-
-
-			 #menuBar {
-                        width: 1000px;
-                        height: 35px;
-                        font-size: 16px;
-                        font-family: Tahoma, Geneva, sans-serif;
-                        font-weight: bold;
-                        text-align: center;
-                        text-shadow: 3px 2px 3px #333333;
-                        background-color: #a1a1a1;
-                        border-radius: 8px;
-                        }
-                #menuBar li {
-                        display: inline;
-                        padding: 20px;
-                        }
-                #menuBar ul {
-                        height: auto;
-                        padding: 8px 0px;
-                        margin: 0px;
-                        }
-                #menu a:hover {
-                    color: #F90;
-                    background-color: #FFF;
-                        }
+			
 
 
 
-		</style>
+ul {
+    list-style-type: none;
+    margin: 0px 20px;
+    padding: 0;
+    overflow: hidden; 
+}
 
-	</HEAD>
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block; 
+    text-align: center;
+    width: 50;
+    height:5px;
+    padding: 20px 50px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    border-radius: 10px;
+    text-align: center; 
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 150px; 
+    
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}			
+	</style>
+		</HEAD>
 	<BODY>
 		<br>
 		<div id="container">
 		<a href="/"><div id="logo" style="border-style: outset"><center><h2>Mechanics and Machine Design</h2><br><i style="font-size: 30px">create new device</i></center></div></a>
 	 	
-		<div id="menuBar">
-                        <ul>
-                                <a href="/"><li>Home</li>
-                                <a href=""><li>About Us</li></a>
-                                <a href=""><li>Projects</li></a>
-                                <a href=""><li>Contact</li></a>
-                        </ul>
-                </div>
-
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#news">About us</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Projects</a>
+    <div class="dropdown-content">
+      <a href="#">History of the projects</a>
+      <a href="#">Device protection of the atmosphere</a>
+      <a href="#">Boilers</a>
+      <a href="#">Machine construction basics</a>
+      <a href="#">machine construction basics 2</a>
+    </div>
+  </li>
+  <li><a href="#news">curiosities</a></li>
+  <li><a href="#news">Contact</a></li>
+</ul>
 
 		<br><div id="notki" style=" width: 600px">
 			{% block content %}
@@ -199,7 +228,7 @@
 		</div>
 
 
-		<div id="stopka"> 
+		<div id="stopka">
 		</div>
 		
 
