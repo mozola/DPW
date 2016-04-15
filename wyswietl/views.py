@@ -6,6 +6,8 @@ from .forms import OdbiorcaForm
 from .forms import ParametryForm
 from .models import Odbiorca
 from .models import Parametry
+from .forms import UOAP0Form
+from .models import UOAP0
 
 def widok(request):
     return render('To jest test <b>tekst</b>')
@@ -39,3 +41,31 @@ def editProject(request):
 
 def major(request):
     return render_to_response('maina.html')
+
+def uoap0odbiorca(request):
+    if request.method =="POST":
+       form=OdbiorcaForm(request.POST)
+       if form.is_valid():
+              form.save()
+              return redirect(uoap0forms)
+    else:
+       form=OdbiorcaForm()
+    return render(request,'mainwebsite.html',{'form':form})
+
+def uoap0forms(request):
+    if request.method == "POST":
+       form=UOAP0Form(request.POST)
+       if form.is_valid():
+            form.save()
+            return redirect(uoapp0widok)
+    else:
+        form=UOAP0Form()
+    return render(request,'uoapp0.html',{'form':form})
+
+
+def uoapp0widok(request):
+     post=Odbiorca.objects.all().last()
+     parametry=UOAP0.objects.all().last()
+     return uoapp0(request,'test.html',{'uoap0':parametry})
+
+

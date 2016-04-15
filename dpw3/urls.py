@@ -12,4 +12,8 @@ urlpatterns = patterns('',
     url(r'^formulaz/$','wyswietl.views.mainwebsite'),
     url(r'^edit/$','wyswietl.views.editProject'),
     url(r'^$','wyswietl.views.major'),
+    url(r'^p0/forms/$','wyswietl.views.uoap0forms'),
+    url(r'^p0/odbiorca/$','wyswietl.views.uoap0odbiorca'),
+    url(r'^p0/resultP0/$','wyswietl.views.uoapp0widok'),
+ 
 )
