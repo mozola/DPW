@@ -1,10 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
+
+<style>
+	#id_wydajnosc_kotla{background-color: white;}
+	#id_masowy_udzial_tlenu{background-color: white;}
+	#id_masowy_udzial_wegla{background-color: white;}
+	#id_masowy_udzial_wodoru{background-color: white;}
+	#id_masowy_udzial_azotu{background-color: white;}
+	#id_masowy_udzial_siarki{background-color: white;}
+	#id_zawartosc_popiolu_w_paliwie_w_stanie_roboczym{background-color: white;}
+	#id_zawartosc_wilgoci_w_paliwie_w_stanie_roboczym{background-color: white;}
+        #id_wspolczynnik_nadmiaru_powietrza_w_komorze_paleniskowej{background-color: white;}
+        #id_udzial_popiolu_unoszonego_przez_spaliny_do_kanalow_kotla{background-color: white;}
+        #id_srednia_zawartosc_wilgoci{background-color: white;}
+        #id_gestosc_CO2_w_WU{background-color: white;}
+	#id_gestosc_SO2_w_WU{background-color: white;}
+	#id_gestosc_N2_w_WU{background-color: white;}
+	#id_gestosc_pary_wodnej_w_WU{background-color: white;}
+	#id_gestosc_powietrza_w_WU{background-color: white;}
+	#id_przyrost_wspolczynnika_nadmiaru_powietrza_na_drodze_komora_paleniskowa_a_kanal_spalin{background-color: white;}
+	#id_cisnienie_wody_zasilajacej{background-color: white;}
+	#id_temperatura_wody_zasilajacej{background-color: white;}
+	#id_cisnienie_pary{background-color: white;}
+	#id_temperatura_pary{background-color: white;}
+	#id_sprawnosc_kotla{background-color: white;}
+	#id_strata_niezupelnego_spalania{background-color: white;}
+	#id_podcisnienie_spalin_w_kanale{background-color: white;}
+	#id_temperatura_spalin_w_kanale{background-color: white;}
+	#id_referencyjna_zawartosc_tlenu_w_spalinach_suchych{background-color: white;}
+        #id_cisnienie_umowne{background-color: white;}
+        #id_temperatura_umowna{background-color: white;}
+	form{border-style: solid 1px; text-align: justify;}
+	button{background-color:silver;border-style: solid 2px;color: #444444;height: 30px; width: 200px;font-size: 15px; text-align: center;}
+	h1{text-align: center;}
+</style>
     <center>
-      <h1>Parametry wejsciowe dla projektu P0</h1>
-      <form method="POST" class="post-form">{% csrf_token %}
+      <h1 style="color: black; text-decoration: underline;">Parametry wejsciowe dla projektu P0</h1>
+      <form style="color: black;" 
+			 method="POST" class="post-form">{% csrf_token %}
                              {{ form.as_p }}
-         <button type="submit" class="save btn btn-default">Dodaj</button>
+         <button type="submit" class="save btn btn-default">Generuj obliczenia</button>
        </form>
      </center>
 {% endblock %}
