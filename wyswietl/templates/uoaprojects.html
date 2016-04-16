@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+	td
+	{
+		color: black;
+	}
+	table
+	{	
+		width:800px;
+		
+	}
+	a
+	{
+		text-align: center;
+		text-color: black;
+		text-decoration: underline;
+	}
+	#labels
+	{
+		background-color: #333333;
+		color: white;
+		text-align: center;
+	}
+	#labels td
+	{
+		color: white;
+	}
+	#links{text-align: center; text-decoration: underline;}
+	#links a{color: #000000}	
+	#h1{color: black;text-decoration: underline; font-size: 20px; text-shadow: 3px 3px 5px black}
+    </style>
+    <center>
+    	<h1 id="h1">Device protections of the atmossphere</h1><br>
+	<div>
+		<table border="2" align="left">
+			<tr id="labels">
+				<td>Lp.</td><td>Model:</td><td>Opis:</td><td>Odnosnik:</td>
+			</tr>
+			<tr>	
+				<td>1</td>
+				<td> <img src="http://www.rafako.com.pl/work/img_cache/c/301a7946d0b188fbfb790fdf1b80cc3.jpg">
+				</td>
+				<td>Calculation algorithm for boilers, all the parameters have been specified by the lecturer in addition to the enthalpy which we can read directly from the tables. Why not from websites? Because they are different values. The last step will be generate scheme of the the same boiler or just similar. This information we can find in the rafako website on this link: <a href="http://www.rafako.com.pl/produkty/kotly/sylwetki">link</a>. If enybody want learn something ubout this company this is a link to his website: <a href="http://www.rafako.com.pl/o-nas/opis-firmy">rafaco</a>
+				</td>
+				<td id="links">
+					<a href="/p0/odbiorca/">link</a> 
+ 			      </td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><img src="http://www.filtrowentylacja.pl/files/Image/technologie/Patron/elektrofiltr_pefo_8000.jpg"></td>
+				<td>The aim of this project is to perform the calculations of the basic parameters of 					  			     the horizontal electrostatic precipitator and the execution of the scheme electrostatic precipitator.
+				</td>
+				<td id="links">
+					<a href="/p2/odbiorca/">link</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+    </center
+{% endblock %}
+~               

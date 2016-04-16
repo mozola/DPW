@@ -8,6 +8,10 @@ from .models import Odbiorca
 from .models import Parametry
 from .forms import UOAP0Form
 from .models import UOAP0
+from .models import UOAP2
+from .forms import UOAP2Form
+
+
 
 def widok(request):
     return render('To jest test <b>tekst</b>')
@@ -62,10 +66,39 @@ def uoap0forms(request):
         form=UOAP0Form()
     return render(request,'uoapp0.html',{'form':form})
 
+def uoa(request):
+    return render_to_response('uoaprojects.html')
+
 
 def uoapp0widok(request):
      post=Odbiorca.objects.all().last()
      parametry=UOAP0.objects.all().last()
      return uoapp0(request,'test.html',{'uoap0':parametry})
 
+
+
+def uoap2odbiorca(request):
+    if request.method =="POST":
+       form=OdbiorcaForm(request.POST)
+       if form.is_valid():
+              form.save()
+              return redirect(uoap2forms)
+    else:
+       form=OdbiorcaForm()
+    return render(request,'mainwebsite.html',{'form':form})
+
+def uoap2forms(request):
+    if request.method == "POST":
+       form=UOAP2Form(request.POST)
+       if form.is_valid():
+            form.save()
+            return redirect(uoapp2widok)
+    else:
+        form=UOAP2Form()
+    return render(request,'uoapp2.html',{'form':form})
+
+def uoapp2widok(request):
+     post=Odbiorca.objects.all().last()
+     parametry=UOAP2.objects.all().last()
+     return uoapp0(request,'uoap2result.html',{'uoap2':parametry})
 

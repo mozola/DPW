@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% block content %}
+      <center>
+      <h1 style="color: black; text-decoration: underline;">Parametry wejsciowe dla projektu P2</h1>
+      <form style="color: black;" 
+                         method="POST" class="post-form">{% csrf_token %}
+                             {{ form.as_p }}
+         <button type="submit" class="save btn btn-default">Generuj obliczenia</button>
+       </form>
+     </center>
+
+
+{% endblock %}
